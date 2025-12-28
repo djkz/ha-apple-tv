@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Shows Panel (Dev)</title>
+  <style>
+    /* HA-like CSS variables for local dev */
+    :root {
+      --primary-color: #03a9f4;
+      --primary-background-color: #111111;
+      --secondary-background-color: #1c1c1c;
+      --card-background-color: #1e1e1e;
+      --primary-text-color: #ffffff;
+      --secondary-text-color: #888888;
+      --ha-card-border-radius: 12px;
+    }
+    body {
+      margin: 0;
+      background: var(--primary-background-color);
+      color: var(--primary-text-color);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/dev.jsx"></script>
+</body>
+</html>
