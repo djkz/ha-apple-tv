@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Opens at `http://localhost:5173`. Uses mock `hass` object - favorites persist in localStorage, play commands log to console.
+Opens at `http://localhost:5173`. Uses mock `hass` object that bridges to macOS TV app via AppleScript - playing a show opens it in the TV app on your Mac. Favorites persist in localStorage.
 
 The catalog loads from `public/tv-shows-catalog.json`.
 
