@@ -62,3 +62,9 @@ Requires `TMDB_API_KEY` environment variable (or edit the script). Fetches all A
 - Home Assistant passes `hass` object for service calls
 - Playing a show calls `script.play_tv_show` with the Apple TV+ URL
 - Favorites stored in localStorage per profile (`tvFavorites_timur`, etc.)
+
+## Attribution
+
+Show data provided by TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.
+
+[![TMDB Logo](https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg)](https://www.themoviedb.org/)
