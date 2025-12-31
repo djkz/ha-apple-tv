@@ -11,6 +11,9 @@ const styles = {
     zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
+    WebkitUserSelect: 'none',
+    userSelect: 'none',
+    WebkitTouchCallout: 'none',
   },
   header: {
     display: 'flex',
@@ -47,10 +50,13 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     overflow: 'hidden',
+    touchAction: 'pan-y',
   },
   leftPanel: {
     borderRight: '1px solid #333',
-    overflow: 'hidden',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    touchAction: 'pan-y',
   },
   rightPanel: {
     display: 'flex',

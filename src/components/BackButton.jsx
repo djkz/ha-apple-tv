@@ -11,7 +11,6 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '8px auto 16px',
   },
   svg: {
     width: 18,

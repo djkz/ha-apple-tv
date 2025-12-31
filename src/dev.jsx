@@ -26,7 +26,7 @@ function DevApp() {
     return hass.subscribe(() => forceUpdate(n => n + 1));
   }, []);
 
-  return <App hass={hass} shows={shows} />;
+  return <App hass={hass} shows={shows} version="dev" />;
 }
 
 createRoot(document.getElementById('root')).render(

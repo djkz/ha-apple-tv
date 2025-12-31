@@ -6,12 +6,16 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
+// Version injected at build time from package.json
+const APP_VERSION = typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : 'dev';
+
 class TVShowsPanel extends HTMLElement {
   constructor() {
     super();
     this._hass = null;
     this._shows = [];
     this._root = null;
+    this._version = APP_VERSION;
   }
 
   // Called by Home Assistant when hass object updates
@@ -32,6 +36,14 @@ class TVShowsPanel extends HTMLElement {
   }
 
   connectedCallback() {
+    // Set touch-action on host element for Android WebView
+    this.style.cssText = `
+      display: block;
+      height: 100%;
+      touch-action: pan-y;
+      -webkit-user-select: none;
+      user-select: none;
+    `;
     this._root = createRoot(this);
     this._loadShows();
   }
@@ -64,6 +76,7 @@ class TVShowsPanel extends HTMLElement {
         hass={this._hass}
         shows={this._shows}
         narrow={this._narrow}
+        version={this._version}
       />
     );
   }

@@ -2,8 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { readFileSync } from 'fs';
 
 const execAsync = promisify(exec);
+const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 // Plugin to bridge hass calls to macOS TV app via AppleScript
 function appleTvBridge() {
@@ -108,6 +110,9 @@ function appleTvBridge() {
 
 export default defineConfig({
   plugins: [react(), appleTvBridge()],
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+  },
   build: {
     outDir: 'dist',
     cssCodeSplit: false,  // Bundle CSS into JS

@@ -118,9 +118,19 @@ const styles = {
     padding: 40,
     color: '#888',
   },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  version: {
+    fontSize: 12,
+    color: '#555',
+  },
 };
 
-export default function App({ hass, shows = [], narrow = false }) {
+export default function App({ hass, shows = [], narrow = false, version = '?' }) {
   const [browserOpen, setBrowserOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(() => {
     return localStorage.getItem(PROFILE_KEY) || 'timur';
@@ -194,7 +204,10 @@ export default function App({ hass, shows = [], narrow = false }) {
 
   return (
     <div style={styles.panel}>
-      <BackButton onClick={handleNavigateBack} />
+      <div style={styles.header}>
+        <BackButton onClick={handleNavigateBack} />
+        <span style={styles.version}>v{version}</span>
+      </div>
 
       <div style={narrow ? styles.topRowNarrow : styles.topRow}>
         <div>
